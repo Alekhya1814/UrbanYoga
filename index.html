@@ -1,0 +1,350 @@
+<!doctype html>
+<html>
+<head>
+    <title>Urban Yoga</title>
+	<meta charset="UTF-8"/>
+	<meta name="description" content="Urban Yog"/>
+	<meta name="keywords" content="Urban Yoga"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="icon" type="image/ico" sizes="32x32" href="images/favicon.ico"/>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.css"/>
+	<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+	<!-- Custom -->
+	<link rel="stylesheet" href="css/yoga.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Charts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="js/utils.js"></script>
+	<!-- Bootstrap -->
+    <script src="js/bootstrap.js" ></script>
+    <script src="js/yoga.js" ></script>
+</head>
+<body>
+	<div class="container header">
+		<div class="container">
+		<div class="col-md-2">
+			<img src="images/logo.png" alt="Urban Yoga" title="Urban Yoga"/>
+		</div>
+		<div class="col-md-10 menuPrnt">
+			<nav class="navbar navbar-default" role="navigation" id="topmenu">
+				<ul class="nav navbar-nav">
+					  <li class="dropdown active">
+						<a href="#" data-toggle="collapse" data-target="#one">Dashboard</a>
+					  </li>
+					  <li class="dropdown">
+						<a href="javascript:void();">Sign In</a>
+					  </li>
+					  <li>
+						<a href="javascript:void();">Classes</a>
+					  </li>
+					   <li class="dropdown">
+						<a href="javascript:void();">Workshops</a>
+					  </li>
+					  <li class="dropdown">
+						<a href="javascript:void();">Appointments</a>
+					  </li>
+					  <li class="dropdown">
+						<a href="javascript:void();">Client Home</a>
+					  </li>
+					  <li class="dropdown">
+						<a href="javascript:void();">Retail</a>
+					  </li>
+				</ul>
+			</nav>
+		</div>
+		</div>
+		<div class="row">
+		  <nav class="navbar navbar-default" role="navigation" id="submenu">
+			<ul class="nav navbar-nav collapse in" id="one">
+			  <li><a href="#" id="">Dashboard</a></li>
+			  <li class="active"><a href="javascript:void();" id="">Business Overview</a></li>
+			  <li><a href="javascript:void();" id="">Schedule</a></li>
+			  <li><a href="javascript:void();" id="">Reports</a></li>
+			</ul>
+		  </nav>
+		</div>
+	</div>
+    <div class="container mainContent">
+		<div class="col-md-2 text-center">
+			<button type='button' class='btn btnAdd' onclick='showPopup();'><i class='fa fa-plus'></i></button><br/>
+			<span class="newPrg">New Program</span>
+		</div>
+		<div class="col-md-10 text-center">
+			<div class="col-md-3 chartPrnt">
+				<div class="p10">
+					<h3 class="yogaType"></h3>
+					<p></p>
+					<canvas id="canvas"></canvas>
+				</div>
+				<p class="col-md-12 p0 summary">
+					<span class="col-md-4">Total Monthly <br/>Sales</span>
+					<span class="col-md-4 crntMnt"></span>
+					<span class="col-md-4 line">
+						<canvas id="lineCanvas1"></canvas>
+					</span>
+				</p>
+				<div class="flipPrnt p10">
+					<div class="flip">more</div>
+					<div class="panel">
+						<table>
+						<thead>
+							<th>Price Name</th>
+							<th>Current Year</th>
+							<th>1 - Year</th>
+						</thead>
+						<tbody>
+						</tbody>
+						</table>
+						<div class="flipless">less</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 chartPrnt">
+				<div class="p10">
+					<h3 class="yogaType"></h3>
+					<p></p>
+					<canvas id="canvas1"></canvas>
+				</div>
+				<p class="col-md-12 p0 summary">
+					<span class="col-md-4">Total Monthly <br/>Sales</span>
+					<span class="col-md-4 crntMnt"></span>
+					<span class="col-md-4 line">
+						<canvas id="lineCanvas2"></canvas>
+					</span>
+				</p>
+				<div class="flipPrnt p10">
+					<div class="flip">more</div>
+					<div class="panel">
+						<table>
+						<thead>
+							<th>Price Name</th>
+							<th>Current Year</th>
+							<th>1 - Year</th>
+						</thead>
+						<tbody>
+						</tbody>
+						</table>
+						<div class="flipless">less</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 chartPrnt">
+				<div class="p10">
+					<h3 class="yogaType"></h3>
+					<p></p>
+					<canvas id="canvas2"></canvas>
+				</div>
+				<p class="col-md-12 p0 summary">
+					<span class="col-md-4">Total Monthly <br/>Sales</span>
+					<span class="col-md-4 crntMnt"></span>
+					<span class="col-md-4 line">
+						<canvas id="lineCanvas3"></canvas>
+					</span>
+				</p>
+				<div class="flipPrnt p10">
+					<div class="flip">more</div>
+					<div class="panel">
+						<table>
+						<thead>
+							<th>Price Name</th>
+							<th>Current Year</th>
+							<th>1 - Year</th>
+						</thead>
+						<tbody>
+						</tbody>
+						</table>
+						<div class="flipless">less</div>
+					</div>
+				</div>
+			</div>
+		<div class="col-md-12 p0 remainingData">
+			<div class="col-md-10 p0 headers">
+				<div class="col-md-2 p0 text-left">All Programs</div>
+				<div class="col-md-2 p0 text-left">Monthly Sales</div>
+				<div class="col-md-2 p0 text-left">Monthly Attendance</div>
+			</div>
+			<div class="p0 otherClassData">
+			
+			</div>
+		</div>
+		</div>
+		
+    </div>
+   <div class="modal fade" id="emptyModal" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>			
+			<div class="modal-body">
+			  <p>Comming soon...</p>
+			</div>
+		  </div>
+		</div>
+	</div>
+
+    <script>
+	$(document).ready(function(){
+		$(".flip").click(function(){
+			$(this).css('visibility','hidden');
+			$(this).next().slideDown("slow");
+		});
+		$(".flipless").click(function(){
+			$(this).parent().slideUp("slow");
+			$(this).parent().prev().css('visibility','visible');
+		});
+		var progData,prodId,tableBody,lineChartData,lastTd;
+		var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"];
+		var color = Chart.helpers.color;
+		var chartDiv = ["canvas","canvas1","canvas2"];
+		var lineCanvas = ["lineCanvas1","lineCanvas2","lineCanvas3"];
+		var mainJson = 'https://api.myjson.com/bins/5bdb3';
+		var subJson = 'https://api.myjson.com/bins/47axv';
+		
+		//getting JSON data from the URL
+		$.when(
+			$.getJSON(mainJson),
+			$.getJSON(subJson)
+		).done(function(result1, result2) {
+			progData=result1[0];
+			progSubData=result2[0];
+		$.each(progData, function(i, item) {
+			if(i < chartDiv.length){
+				var barChartData = {
+					labels: months,
+					datasets: [{
+						label: 'Previous Year',
+						backgroundColor: color(window.chartColors.purple).alpha(0.5).rgbString(),
+						borderColor: window.chartColors.purple,
+						borderWidth: 1,
+						data: progData[i].Sales.PreviousYear
+					}, {
+						label: 'Current Year',
+						backgroundColor: color(window.chartColors.green).alpha(0.5).rgbString(),
+						borderColor: window.chartColors.green,
+						borderWidth: 1,
+						data: progData[i].Sales.CurrentYear
+					}]
+
+				};
+				//Assigning Data to respective classes
+				$('#'+chartDiv[i]).prev().text("Sales By Month");
+				$('#'+chartDiv[i]).prev().prev().html(progData[i].Name + "<button type='button' class='btn btnEdit' onclick='showPopup();'><i class='fa fa-pencil'></i></button>");
+				$('#'+chartDiv[i]).parent().next().children('.crntMnt').html("Current Month <br/><b> &#36; "+progData[i].TotalMonthlySales +"</b>");
+				generate(chartDiv[i],barChartData,progData[i].Name);
+				progId= progData[i].ProgramID;
+				tableBody = $('#'+chartDiv[i]).parent().next().next().find('tbody');
+				//Looping through SubJson to form table per each Program
+				$.each(progSubData, function(j, item) {
+					if(progSubData[j].ProgramID == progId){
+						var $tr = $(tableBody).append(
+							$('<tr><td class="ellipsis">'+ progSubData[j].Name + '</td><td class="text-right">&#36; '+progSubData[j].Sales+'</td><td><canvas id=line'+j+'></canvas></td></tr>')
+						); 
+						generateLine('line'+j,lineChartData);
+					}
+				});
+				generateLine(lineCanvas[i],'');
+			}else{
+				$('.otherClassData').append('<div class="col-md-10 childDt p0"><div class="col-md-2 p0 text-left">'+progData[i].Name+' <br/> <span class="flip">more</span></div><div class="col-md-2 p0 text-left"> &#36;'+progData[i].TotalMonthlySales+'</div><div class="col-md-2 p0 text-left">'+progData[i].MonthlyAttendance+' visits</div></div>');
+			}
+		});
+		});
+	});
+		//Bar graph Generation
+		function generate(divId,barChartData,chartName){
+			var ctx = document.getElementById(divId).getContext("2d");
+			ctx.height = 500;
+            window.myBar = new Chart(ctx, {
+                type: 'bar',
+                data: barChartData,
+                options: {
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+						display:false
+                    },
+                    title: {
+                        display: false,
+                        text: chartName
+                    },
+					scales:{
+						yAxes: [{
+							display: false,
+							gridLines : {
+								display : false
+							}
+						}],
+						xAxes: [{
+							gridLines : {
+								drawBorder: false,
+								display : false
+							}
+						}]
+					}
+                }
+            });
+		}
+		//Line graph Generation
+		function generateLine(lineDivId,lineChartData){
+			var ctx = document.getElementById(lineDivId).getContext("2d");
+			ctx.width = 200;
+			var myChart = new Chart(ctx, {
+			  type: 'line',
+			  data: {
+			  labels: ['M', 'T', 'W', 'T', 'F'],
+				datasets: [{
+					label: "",
+					backgroundColor: "green",
+					borderColor: "lightgrey",
+					fill: false,
+					lineTension: 0,
+					radius: 2,
+					borderWidth: 1,
+					pointRadius: 3,
+					pointBorder:false,
+					 showTooltips: false,
+				  data: [10, 50, 25, 70, 40],
+				}]
+			  },
+			 
+			  options: {
+				tooltips: {enabled: false},
+				hover: {mode: null},
+				responsive: true,
+				legend: {
+					position: 'top',
+					display:false
+				},
+				scales:{
+					yAxes: [{
+						display: false,
+						gridLines : {
+							display : false
+						}
+						
+					}],
+					xAxes: [{
+					display: false,
+						gridLines : {
+							drawBorder: false,
+							display : false
+						}
+					}]
+				},
+				title: {
+				  display: false,
+				  text: ''
+				}
+			  }
+			});
+			
+		}
+		function showPopup(){
+			$('#emptyModal').modal('show');
+		}
+    </script>
+</body>
+
+</html>
